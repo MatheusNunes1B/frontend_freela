@@ -1,5 +1,12 @@
 require('dotenv').config();
 
+const requiredEnvVars = ['SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY', 'JWT_SECRET'];
+const missingEnvVars = requiredEnvVars.filter((envVar) => !process.env[envVar]);
+
+if (missingEnvVars.length > 0) {
+    throw new Error(`Configure as variáveis de ambiente obrigatórias: ${missingEnvVars.join(', ')}.`);
+}
+
 const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
@@ -13,10 +20,6 @@ const allowedOrigins = [
     'http://127.0.0.1:5500',
     'http://localhost:3000'
 ].filter(Boolean);
-
-if (!process.env.JWT_SECRET) {
-    throw new Error('Configure JWT_SECRET no ambiente.');
-}
 
 app.use(cors({
     origin(origin, callback) {
