@@ -33,9 +33,9 @@ function createProductCard(product) {
                 <div class="product-price my-2 text-2xl font-bold text-brand">${formatCurrency(product.preco)}</div>
                 <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
             </a>
-            <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+            <button type="button" class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
                 <img class="h-[25px] w-[25px]" src="assets/images/ui/heart-3-line.png" alt="Favoritar" />
-            </div>
+            </button>
         </div>
     `;
 }
