@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B7Store</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        brand: '#1D4FFE'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F9F9F9] font-sans text-base">
+    <section class="header-warning bg-black py-4 text-center text-base text-white">
+        <div class="mobile block md:hidden"><span class="font-bold">FRETE GRÁTIS</span> para todo o Nordeste!</div>
+        <div class="desktop hidden md:block"><span class="font-bold">FRETE GRÁTIS</span> para todo o Nordeste nas compras acima de R$ 199,00.
+            <span class="font-bold">APROVEITA!</span>
+        </div>
+    </section>
+    <header class="bg-white">
+        <div class="header-main mx-auto flex max-w-[1024px] items-center justify-between px-6 py-[33px]">
+            <div class="header-left flex items-center">
+                <a class="logo mr-10 inline-flex" href="">
+                    <img src="assets/images/ui/logo-black.png" alt="B7Store" />
+                </a>
+                <ul class="hidden items-center gap-10 lg:flex">
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Camisetas</a></li>
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Kits B7Web</a></li>
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Acessórios</a></li>
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Eletrônicos</a></li>
+                </ul>
+            </div>
+            <div class="header-right flex items-center gap-4">
+                <input class="search hidden h-12 w-40 rounded border border-[#D9D9D9] px-4 pl-10 text-base outline-none lg:block" type="text" placeholder="Pesquisa" />
+                <a href="login.html" class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                    <img src="assets/images/ui/user-line.png" alt="" />
+                </a>
+                <a href="checkout.html" class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                    <img src="assets/images/ui/shopping-bag-4-line.png" alt="" />
+                </a>
+                <a class="btn-icon menu-burger flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5 lg:hidden">
+                    <img class="off block h-6 w-6" src="assets/images/ui/menu-line.png" alt="" />
+                    <img class="on hidden h-6 w-6" src="assets/images/ui/menu-line-white.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div class="header-menu hidden px-6 pb-8 text-center lg:hidden">
+            <a class="block py-2 text-[#7F7F7F] no-underline" href="produtos.html">Camisetas</a>
+            <a class="block py-2 text-[#7F7F7F] no-underline" href="produtos.html">Kits B7Web</a>
+            <a class="block py-2 text-[#7F7F7F] no-underline" href="produtos.html">Acessórios</a>
+            <a class="block py-2 text-[#7F7F7F] no-underline" href="produtos.html">Eletrônicos</a>
+        </div>
+        <div class="header-search px-6 pb-6 lg:hidden">
+            <input class="search h-12 w-full rounded border border-[#D9D9D9] px-4 text-base outline-none" type="text" placeholder="O que você procura?" />
+        </div>
+    </header>
+    <main class="mx-auto max-w-[1024px] py-8">
+        <section class="breadcrumb mx-6 text-base text-[#7F7F7F] lg:mt-8">Home > Camisetas</section>
+
+        <section class="info mx-6 mt-6 flex-1 lg:mt-0">
+            <div class="product-qt mt-3 flex"><span>12</span> Produtos</div>
+            <div class="top-buttons mt-5 flex gap-5 lg:hidden">
+                <div class="top-button flex flex-1 cursor-pointer items-center rounded border border-[#D9D9D9] bg-white px-6 py-4" data-name="order">
+                    <div class="top-button-name flex-1 text-base text-[#7F7F7F]">Ordenar</div>
+                    <div class="top-button-icon flex items-center justify-center">
+                        <img src="assets/images/ui/arrow-up-down-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="top-button flex flex-1 cursor-pointer items-center rounded border border-[#D9D9D9] bg-white px-6 py-4" data-name="filter">
+                    <div class="top-button-name flex-1 text-base text-[#7F7F7F]">Filtrar</div>
+                    <div class="top-button-icon flex items-center justify-center">
+                        <img src="assets/images/ui/equalizer-2-line.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="order-area mt-6 hidden lg:mt-0 lg:block">
+                <label for="order">Ordenar por</label>
+                <select id="order" name="order">
+                    <option value="price">Por preço</option>
+                    <option value="bestselling">Por mais vendidos</option>
+                    <option value="alpha">Por ordem alfabética</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="products mx-6 my-10 flex flex-col gap-8 lg:flex-row">
+            <div class="filters hidden lg:block lg:w-64">
+
+                <div class="filter border-b border-[#D9D9D9] py-5">
+                    <div class="filter-header flex items-center justify-between">
+                        <div class="filter-name font-bold text-black">Tecnologia</div>
+                        <img class="filter-icon h-6 w-6 cursor-pointer" src="assets/images/ui/arrow-left-s-line.png" alt="" />
+                    </div>
+                    <div class="filter-body mt-4 space-y-3 text-[#7F7F7F]">
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="rn" />
+                            <span>React Native</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="node" />
+                            <span>Node</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="laravel" />
+                            <span>Laravel</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="react" />
+                            <span>React</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter border-b border-[#D9D9D9] py-5">
+                    <div class="filter-header flex items-center justify-between">
+                        <div class="filter-name font-bold text-black">Tecnologia</div>
+                        <img class="filter-icon h-6 w-6 cursor-pointer" src="assets/images/ui/arrow-left-s-line.png" alt="" />
+                    </div>
+                    <div class="filter-body mt-4 space-y-3 text-[#7F7F7F]">
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="rn" />
+                            <span>React Native</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="node" />
+                            <span>Node</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="laravel" />
+                            <span>Laravel</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="react" />
+                            <span>React</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter border-b border-[#D9D9D9] py-5">
+                    <div class="filter-header flex items-center justify-between">
+                        <div class="filter-name font-bold text-black">Tecnologia</div>
+                        <img class="filter-icon h-6 w-6 cursor-pointer" src="assets/images/ui/arrow-left-s-line.png" alt="" />
+                    </div>
+                    <div class="filter-body mt-4 space-y-3 text-[#7F7F7F]">
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="rn" />
+                            <span>React Native</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="node" />
+                            <span>Node</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="laravel" />
+                            <span>Laravel</span>
+                        </label>
+                        <label class="filter-option flex items-center gap-3">
+                            <input type="checkbox" name="tecnologia" value="react" />
+                            <span>React</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="product-item relative flex-1 rounded-[9px] border border-[#D9D9D9] bg-white p-8 lg:p-5">
+                    <a class="block no-underline" href="product.html">
+                        <div class="product-photo">
+                            <img class="w-full" src="assets/images/products/camiseta-css.png" alt="" />
+                        </div>
+                        <div class="product-name pt-10 text-lg font-bold text-black">Camisa CSS - Azul</div>
+                        <div class="product-price my-2 text-2xl font-bold text-brand">R$ 59,90</div>
+                        <div class="product-info text-lg text-[#7F7F7F]">Pagamento via PIX</div>
+                    </a>
+                    <div class="product-fav absolute right-8 top-8 flex h-[51px] w-[51px] cursor-pointer items-center justify-center rounded border border-[#B7B7B7] bg-white lg:right-5 lg:top-5">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <section class="newsletter border-t border-[#D9D9D9] bg-white">
+        <div class="news-area mx-auto flex max-w-[1024px] flex-col items-center gap-8 px-6 py-14 lg:flex-row">
+            <div class="news-left mx-auto w-[220px] text-center lg:mx-0 lg:flex lg:w-auto lg:items-center lg:text-left">
+                <img class="mx-auto h-[68px] w-[68px] lg:mx-0 lg:mr-7" src="assets/images/ui/mail-send-line.png" alt="" />
+                <div>
+                    <h3 class="my-6 text-2xl font-normal text-black lg:my-0 lg:mb-1">Fique por dentro das promoções!</h3>
+                    <p class="text-[#7F7F7F]">Coloque seu e-mail e seja o primeiro a saber</p>
+                </div>
+            </div>
+            <div class="news-right flex w-full flex-1 flex-col gap-6 lg:flex-row">
+                <input class="input rounded border border-[#D9D9D9] px-6 py-[21px] text-base text-[#7F7F7F] outline-none" type="text" placeholder="Qual seu e-mail?" />
+                <button class="button cursor-pointer rounded bg-brand px-8 py-[18px] text-center text-lg text-white">Enviar</button>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black text-white">
+        <div class="footer-menu mx-auto flex max-w-[1024px] flex-col px-6 py-12 pt-32 text-center lg:flex-row lg:items-center lg:justify-between lg:pt-16">
+            <a class="logo mr-10 inline-flex" href="">
+                <img src="assets/images/ui/logo-white.png" alt="B7Store" />
+            </a>
+            <ul class="hidden items-center gap-10 lg:flex">
+                <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Camisetas</a></li>
+                <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Kits B7Web</a></li>
+                <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Acessórios</a></li>
+                <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Eletrônicos</a></li>
+            </ul>
+        </div>
+        <div class="footer-contacts mx-auto flex max-w-[1024px] flex-col border-y border-white/25 px-6 py-12 lg:flex-row">
+            <div class="contacts lg:flex-1">
+                <div class="footer-title mb-8 text-center text-xl lg:text-left">Precisa de ajuda?</div>
+                <div class="footer-icons flex flex-col gap-8 px-8 lg:flex-row lg:px-0">
+                    <a class="btn-icon-text flex h-20 items-center justify-center rounded border border-[#D9D9D9] px-8 text-xl text-white no-underline" href="">
+                        <img src="assets/images/ui/mail-line.png" alt="" />
+                        <span>b7store@email.com</span>
+                    </a>
+                    <a class="btn-icon-text flex h-20 items-center justify-center rounded border border-[#D9D9D9] px-8 text-xl text-white no-underline" href="">
+                        <img src="assets/images/ui/phone-line.png" alt="" />
+                        <span>(00) 00000-0000</span>
+                    </a>
+                </div>
+            </div>
+            <div class="social mt-12 lg:mt-0 lg:flex-1">
+                <div class="footer-title mb-8 text-center text-xl lg:text-left">Acompanhe nas redes sociais</div>
+                <div class="footer-icons flex flex-col gap-8 px-8 lg:flex-row lg:px-0">
+
+                    <a href="" class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                        <img src="assets/images/ui/instagram-line.png" alt="" />
+                    </a>
+
+                    <a href="" class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                        <img src="assets/images/ui/linkedin-line.png" alt="" />
+                    </a>
+
+                    <a href="" class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                        <img src="assets/images/ui/facebook-line.png" alt="" />
+                    </a>
+
+                    <a href="" class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                        <img src="assets/images/ui/twitter-x-fill.png" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom mx-auto flex max-w-[1024px] flex-col items-center gap-16 px-6 py-12 lg:flex-row lg:justify-between">
+            <div class="phrase text-center lg:text-left">Se você leu isso aqui, saiba que está no caminho certo!<br />Continue estudando e você
+                chegará lá...</div>
+            <div class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                <img src="assets/images/ui/arrow-up-line.png" alt="" />
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/api.js"></script>
+    <script type="text/javascript" src="assets/js/header.js"></script>
+    <script type="text/javascript" src="assets/js/footer.js"></script>
+    <script type="text/javascript" src="assets/js/produtos.js"></script>
+    <script src="assets/js/products-api.js"></script>
+</body>
+
+</html>

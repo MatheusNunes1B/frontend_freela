@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | B7Store</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        brand: '#1D4FFE'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F9F9F9] font-sans text-base">
+    <section class="header-warning bg-black py-4 text-center text-base text-white">
+        <div class="mobile block md:hidden"><span class="font-bold">FRETE GRÁTIS</span> para todo o Nordeste!</div>
+        <div class="desktop hidden md:block"><span class="font-bold">FRETE GRÁTIS</span> para todo o Nordeste nas compras acima de R$ 199,00.
+            <span class="font-bold">APROVEITA!</span>
+        </div>
+    </section>
+
+    <header class="bg-white">
+        <div class="header-main mx-auto flex max-w-[1024px] items-center justify-between px-6 py-[33px]">
+            <div class="header-left flex items-center">
+                <a class="logo mr-10 inline-flex" href="index.html">
+                    <img src="assets/images/ui/logo-black.png" alt="B7Store" />
+                </a>
+                <ul class="hidden items-center gap-10 lg:flex">
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Camisetas</a></li>
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Kits B7Web</a></li>
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Acessórios</a></li>
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Eletrônicos</a></li>
+                </ul>
+            </div>
+            <div class="header-right flex items-center gap-4">
+                <input class="search hidden h-12 w-40 rounded border border-[#D9D9D9] px-4 pl-10 text-base outline-none lg:block" type="text" placeholder="Pesquisa" />
+                <a href="login.html" class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                    <img src="assets/images/ui/user-line.png" alt="Login" />
+                </a>
+                <a href="checkout.html" class="btn-icon flex h-12 w-12 cursor-pointer items-center justify-center rounded border border-[#D9D9D9] transition hover:bg-black/5">
+                    <img src="assets/images/ui/shopping-bag-4-line.png" alt="Carrinho" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-[520px] px-6 py-16">
+        <section class="rounded-2xl bg-white p-8 shadow-sm">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">Área administrativa</p>
+            <h1 class="mt-3 text-4xl font-bold text-zinc-950">Entrar na B7Store</h1>
+            <p class="mt-3 text-zinc-600">Use o usuário criado no Supabase para acessar rotas protegidas e cadastrar produtos.</p>
+
+            <form data-login-form class="mt-8 space-y-5">
+                <label class="block">
+                    <span class="mb-2 block font-medium text-zinc-800">E-mail</span>
+                    <input name="email" type="email" required class="w-full rounded-lg border border-zinc-300 px-4 py-4 text-base outline-none focus:border-blue-600" placeholder="admin@email.com" />
+                </label>
+                <label class="block">
+                    <span class="mb-2 block font-medium text-zinc-800">Senha</span>
+                    <input name="senha" type="password" required class="w-full rounded-lg border border-zinc-300 px-4 py-4 text-base outline-none focus:border-blue-600" placeholder="Sua senha" />
+                </label>
+                <button class="w-full rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white transition hover:bg-blue-700">Entrar</button>
+                <p data-login-message class="login-message min-h-6 text-sm font-semibold"></p>
+            </form>
+
+            <a href="admin-produtos.html" class="mt-6 inline-block text-blue-600 hover:underline">Cadastrar produto depois do login</a>
+        </section>
+    </main>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>

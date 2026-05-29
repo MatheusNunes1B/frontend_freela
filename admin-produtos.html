@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto | B7Store</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        brand: '#1D4FFE'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F9F9F9] font-sans text-base">
+    <header class="bg-white">
+        <div class="header-main mx-auto flex max-w-[1024px] items-center justify-between px-6 py-[33px]">
+            <div class="header-left flex items-center">
+                <a class="logo mr-10 inline-flex" href="index.html">
+                    <img src="assets/images/ui/logo-black.png" alt="B7Store" />
+                </a>
+                <ul class="hidden items-center gap-10 lg:flex">
+                    <li><a class="text-[#7F7F7F] no-underline transition hover:text-black" href="produtos.html">Loja</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-[720px] px-6 py-16">
+        <section class="rounded-2xl bg-white p-8 shadow-sm">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">Produtos</p>
+            <h1 class="mt-3 text-4xl font-bold text-zinc-950">Cadastrar produto</h1>
+            <p class="mt-3 text-zinc-600">Esta tela envia os dados para a API protegida. Faça login antes para salvar o token JWT no navegador.</p>
+
+            <form data-product-form class="mt-8 grid gap-5">
+                <label>
+                    <span class="mb-2 block font-medium text-zinc-800">Nome</span>
+                    <input name="nome" required class="w-full rounded-lg border border-zinc-300 px-4 py-4 text-base outline-none focus:border-blue-600" placeholder="Camiseta Node.js" />
+                </label>
+                <label>
+                    <span class="mb-2 block font-medium text-zinc-800">Descrição</span>
+                    <textarea name="descricao" rows="4" class="w-full rounded-lg border border-zinc-300 px-4 py-4 text-base outline-none focus:border-blue-600" placeholder="Descrição do produto"></textarea>
+                </label>
+                <label>
+                    <span class="mb-2 block font-medium text-zinc-800">Preço</span>
+                    <input name="preco" type="number" min="0" step="0.01" required class="w-full rounded-lg border border-zinc-300 px-4 py-4 text-base outline-none focus:border-blue-600" placeholder="99.90" />
+                </label>
+                <label>
+                    <span class="mb-2 block font-medium text-zinc-800">Imagem</span>
+                    <input name="imagem" class="w-full rounded-lg border border-zinc-300 px-4 py-4 text-base outline-none focus:border-blue-600" placeholder="assets/images/products/camiseta-node.png" />
+                </label>
+                <button class="rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white transition hover:bg-blue-700">Cadastrar</button>
+                <p data-product-message class="login-message min-h-6 text-sm font-semibold"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/admin-products.js"></script>
+</body>
+
+</html>
